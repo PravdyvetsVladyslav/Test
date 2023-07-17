@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Структура, що представляє інформацію про замовлення
 typedef struct {
     int orderId;
     char itemName[100];
@@ -10,7 +9,6 @@ typedef struct {
     int quantity;
 } Order;
 
-// Структура, що представляє інформацію про користувача
 typedef struct {
     int userId;
     char username[100];
@@ -18,7 +16,6 @@ typedef struct {
     int orderCount;
 } User;
 
-// Функція для створення нового користувача
 User createNewUser(int userId, const char* username) {
     User newUser;
     newUser.userId = userId;
@@ -27,7 +24,6 @@ User createNewUser(int userId, const char* username) {
     return newUser;
 }
 
-// Функція для додавання замовлення для користувача
 void addOrder(User* user, const char* itemName, float price, int quantity) {
     Order newOrder;
     newOrder.orderId = user->orderCount + 1;
@@ -39,7 +35,6 @@ void addOrder(User* user, const char* itemName, float price, int quantity) {
     user->orderCount++;
 }
 
-// Функція для відображення історії замовлень користувача та розрахунку сумарної ціни
 void displayOrderHistory(const User* user) {
     printf("Order History for User: %s\n", user->username);
 
@@ -133,7 +128,7 @@ int main() {
                 }
                 printf("Enter item number: ");
                 scanf("%d", &foodIndex);
-                foodIndex--;  // Зменшення на 1 для відповідності індексу масиву
+                foodIndex--; 
                 if (foodIndex >= 0 && foodIndex < sizeof(mainCourseItems) / sizeof(mainCourseItems[0])) {
                     printf("Enter quantity: ");
                     scanf("%d", &quantity);
@@ -149,7 +144,7 @@ int main() {
                 }
                 printf("Enter item number: ");
                 scanf("%d", &foodIndex);
-                foodIndex--;  // Зменшення на 1 для відповідності індексу масиву
+                foodIndex--; 
                 if (foodIndex >= 0 && foodIndex < sizeof(saladItems) / sizeof(saladItems[0])) {
                     printf("Enter quantity: ");
                     scanf("%d", &quantity);
@@ -165,7 +160,7 @@ int main() {
                 }
                 printf("Enter item number: ");
                 scanf("%d", &foodIndex);
-                foodIndex--;  // Зменшення на 1 для відповідності індексу масиву
+                foodIndex--; 
                 if (foodIndex >= 0 && foodIndex < sizeof(fastFoodItems) / sizeof(fastFoodItems[0])) {
                     printf("Enter quantity: ");
                     scanf("%d", &quantity);
@@ -181,7 +176,7 @@ int main() {
                 }
                 printf("Enter item number: ");
                 scanf("%d", &foodIndex);
-                foodIndex--;  // Зменшення на 1 для відповідності індексу масиву
+                foodIndex--; 
                 if (foodIndex >= 0 && foodIndex < sizeof(appetizerItems) / sizeof(appetizerItems[0])) {
                     printf("Enter quantity: ");
                     scanf("%d", &quantity);
